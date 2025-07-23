@@ -146,14 +146,23 @@
         }
 
         .logo {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #f7931a, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #f7931a, #00d4ff);
+    
+    /* Background clip for gradient text */
+    -webkit-background-clip: text;
+    background-clip: text; /* Standard property */
+    
+    /* Text fill transparency */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for non-webkit */
+
+    margin-bottom: 15px;
+
+    /* Optional glowing animation */
+    animation: glow 2s ease-in-out infinite alternate;
+}
 
         @keyframes glow {
             0% { filter: drop-shadow(0 0 10px #f7931a); }
